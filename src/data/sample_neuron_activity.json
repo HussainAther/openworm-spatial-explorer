@@ -1,0 +1,45 @@
+{
+  "timesteps": [
+    {
+      "time": 0,
+      "neurons": [
+        { "id": "AVAL", "x": -1.2, "y": 0.5, "z": 0.0, "activity": 0.2 },
+        { "id": "AVAR", "x": 1.2, "y": 0.5, "z": 0.0, "activity": 0.3 },
+        { "id": "PVCL", "x": -0.8, "y": -0.3, "z": 0.2, "activity": 0.5 },
+        { "id": "PVCR", "x": 0.8, "y": -0.3, "z": 0.2, "activity": 0.4 },
+        { "id": "VB1", "x": -0.4, "y": -1.0, "z": -0.2, "activity": 0.7 },
+        { "id": "DB1", "x": 0.4, "y": -1.0, "z": -0.2, "activity": 0.6 }
+      ]
+    },
+    {
+      "time": 1,
+      "neurons": [
+        { "id": "AVAL", "x": -1.2, "y": 0.5, "z": 0.0, "activity": 0.5 },
+        { "id": "AVAR", "x": 1.2, "y": 0.5, "z": 0.0, "activity": 0.4 },
+        { "id": "PVCL", "x": -0.8, "y": -0.3, "z": 0.2, "activity": 0.6 },
+        { "id": "PVCR", "x": 0.8, "y": -0.3, "z": 0.2, "activity": 0.3 },
+        { "id": "VB1", "x": -0.4, "y": -1.0, "z": -0.2, "activity": 0.8 },
+        { "id": "DB1", "x": 0.4, "y": -1.0, "z": -0.2, "activity": 0.5 }
+      ]
+    },
+    {
+      "time": 2,
+      "neurons": [
+        { "id": "AVAL", "x": -1.2, "y": 0.5, "z": 0.0, "activity": 0.7 },
+        { "id": "AVAR", "x": 1.2, "y": 0.5, "z": 0.0, "activity": 0.6 },
+        { "id": "PVCL", "x": -0.8, "y": -0.3, "z": 0.2, "activity": 0.4 },
+        { "id": "PVCR", "x": 0.8, "y": -0.3, "z": 0.2, "activity": 0.7 },
+        { "id": "VB1", "x": -0.4, "y": -1.0, "z": -0.2, "activity": 0.5 },
+        { "id": "DB1", "x": 0.4, "y": -1.0, "z": -0.2, "activity": 0.9 }
+      ]
+    }
+  ],
+  "edges": [
+    ["AVAL", "PVCL"],
+    ["AVAR", "PVCR"],
+    ["PVCL", "VB1"],
+    ["PVCR", "DB1"],
+    ["AVAL", "AVAR"],
+    ["VB1", "DB1"]
+  ]
+}
