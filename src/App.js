@@ -6,6 +6,7 @@ import neuronData from "./data/sample_neuron_activity.json";
 export default function App() {
   const containerRef = useRef(null);
   const sceneRef = useRef(null);
+  const frameIndexRef = useRef(0);
 
   const [frameIndex, setFrameIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -13,12 +14,16 @@ export default function App() {
   const maxFrame = neuronData.timesteps.length - 1;
 
   useEffect(() => {
+    frameIndexRef.current = frameIndex;
+  }, [frameIndex]);
+
+  useEffect(() => {
     if (!containerRef.current) return;
 
     sceneRef.current = new WebXRScene(
       containerRef.current,
       neuronData,
-      () => frameIndex
+      () => frameIndexRef.current
     );
 
     return () => {
@@ -38,7 +43,14 @@ export default function App() {
   }, [isPlaying, maxFrame]);
 
   return (
-    <div style={{ width: "100vw", height: "100vh", overflow: "hidden", background: "#050816" }}>
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        overflow: "hidden",
+        background: "#050816"
+      }}
+    >
       <div ref={containerRef} style={{ width: "100%", height: "100%" }} />
 
       <TimelineSlider
