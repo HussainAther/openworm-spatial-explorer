@@ -27,3 +27,14 @@ openworm-spatial-explorer/
 ├── public/
 ├── README.md
 └── demo.gif
+
+## Install
+
+```bash
+npm install
+Run locally
+npm run dev
+Build
+npm run build
+```
+
